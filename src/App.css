@@ -1,20 +1,31 @@
 .App {
   text-align: center;
 }
+.homepage-p{
+  color: black;
+  font-size: 30px;
+  font-weight: 600;
+}
 
 .App-logo {
-  height: 40vmin;
+  font-size: 150px;
+  text-shadow: 3px 3px #743f3f;
+  font-weight: 700;
+  color: black;
   pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    animation: App-logo-spin infinite 15s linear;
   }
 }
 
 .App-header {
-  background-color: #282c34;
+  text-shadow: 1px 1px #743f3f;
+  background-image: url("./assets/1.jpg");
+  background-position: center;
+  background-size: cover;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -25,7 +36,10 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #252424;
+  text-decoration: none;
+  font-size: 50px;
+  text-shadow: 1px 1px #743f3f;
 }
 
 @keyframes App-logo-spin {
