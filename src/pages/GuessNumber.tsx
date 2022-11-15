@@ -1,5 +1,5 @@
 import { BackgroundImage, Button, Center, createStyles, Grid } from "@mantine/core";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,FC } from "react";
 import { useNavigate } from "react-router-dom";
 import HistoryChart from "../components/HistoryChart";
 import NumberInput from "../components/NumberInput";
@@ -17,7 +17,7 @@ const useStyles = createStyles(theme => ({
   }
 }));
 
-const GuessNumber = () => {
+const GuessNumber:FC = () => {
   const [inputHistory, setInputHistory] = useState<number[]>([])
   const [hintHistory, setHintHistory] = useState<string[]>([])
   const [randomNr] = useState<number>((Math.floor(Math.random() * 100) + 1))

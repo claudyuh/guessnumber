@@ -1,8 +1,8 @@
-import React from "react";
+import React, {FC} from "react";
 import { Link } from "react-router-dom";
 import '../App.css';
 
-const Homepage = () => {
+const Homepage:FC = () => {
     return (
         <div className="App">
           <header className="App-header">

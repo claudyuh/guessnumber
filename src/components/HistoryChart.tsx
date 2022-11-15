@@ -1,4 +1,5 @@
 import { createStyles, Table } from "@mantine/core";
+import React from 'react'
 
 interface HistoryData {
   inputHistory: number[];
@@ -19,7 +20,7 @@ const useStyles = createStyles(theme => ({
   }
 }));
 
-const HistoryChart = ({ inputHistory, hintArray }: HistoryData) => {
+const HistoryChart: React.FC<HistoryData> = ({ inputHistory, hintArray }: HistoryData) => {
   const { classes } = useStyles();
 
 

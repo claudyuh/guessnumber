@@ -4,7 +4,7 @@ import {
   SimpleGrid,
   Button,
 } from "@mantine/core";
-import { useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 const useStyles = createStyles(theme => ({
   card: {
     width: "50%",
@@ -44,18 +44,18 @@ title: {
 }));
 
 interface Iprops {
-  getData : (inputNr: number) => any
+  getData : (inputNr: number) => void
 }
 
 let allowedKeys = ['1','2','3','4','5','6','7','8','9','Clear','0','Ok']
 
-const NumberInput = ({getData}:Iprops) => {
+const NumberInput:FC<Iprops> = ({getData}:Iprops) => {
   const [inputNr, setInputNr] = useState<string>("0")
   const { classes } = useStyles();
   
   // hook for keypress
   useEffect(()=>{
-    const detectKey = (e:any) => {
+    const detectKey = (e: { key: string; }) => {
       if([...allowedKeys, 'Enter', 'Backspace'].includes(e.key)){
         handleAddNr(e.key)
       }

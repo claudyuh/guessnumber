@@ -1,3 +1,4 @@
+import React, { FC } from 'react';
 import {
   createStyles,
   Title,
@@ -39,7 +40,7 @@ const useStyles = createStyles(theme => ({
   },
 }));
 
-const ResultPage = () => {
+const ResultPage:FC = () => {
   const { classes } = useStyles();
   const [searchParams] = useSearchParams();
 
