@@ -17,6 +17,9 @@ const useStyles = createStyles(theme => ({
   },
   thead1:{
     fontSize:'18px !important'
+  },
+  td:{
+    height:'17px'
   }
 }));
 
@@ -31,9 +34,9 @@ const HistoryChart: React.FC<HistoryData> = ({ inputHistory, hintArray }: Histor
     </tr>
   );
 
-  const rows = inputHistory.concat(new Array(10-inputHistory.length).fill('-')).map((item, ind) => (
+  const rows = inputHistory.concat(new Array(10-inputHistory.length).fill('')).map((item, ind) => (
     <tr key={ind}>
-      <td>{item}</td>
+      <td className={classes.td}>{item}</td>
       <td>{hintArray[ind]}</td>
     </tr>
   ));
