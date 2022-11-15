@@ -7,7 +7,7 @@ import {
   Group,
   BackgroundImage,
 } from "@mantine/core";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useLocation, useSearchParams } from "react-router-dom";
 import happyFace from "../assets/happy.png";
 import sadFace from "../assets/sad.png";
 import bgImage from '../assets/25235.jpg'
@@ -43,9 +43,10 @@ const useStyles = createStyles(theme => ({
 const ResultPage:FC = () => {
   const { classes } = useStyles();
   const [searchParams] = useSearchParams();
-
+  let query = parseInt(searchParams.get('max')!)
   const result = searchParams.get("win");
-
+  const location = useLocation();
+  console.log(location.state)
   return (
     <BackgroundImage src={bgImage} radius="sm">
 
@@ -56,7 +57,8 @@ const ResultPage:FC = () => {
             <div className={classes.label}>
               <img className={classes.img} src={happyFace} alt="happyFace" />
             </div>
-            <Title className={classes.title}>"Congrats you won!"</Title>
+            <Title className={classes.title}>"Congrats you won!"You won in {10-query} attempts!</Title>
+            <Title className={classes.title}>You've got it right, it was : {location.state}</Title>
           </>
         ) : (
           <>
@@ -66,6 +68,7 @@ const ResultPage:FC = () => {
             <Title className={classes.title}>
               "Well, you lost this time, you can try a different strategy"
             </Title>
+            <Title className={classes.title}>The random number was: {location.state}</Title>
           </>
         )}
         <Group position="center">

@@ -34,9 +34,8 @@ const GuessNumber:FC = () => {
     let query = parseInt(searchParams.get('max')!)
     
     if(inputHistory[0]===randomNr){
-      return navigate(`/guessnumber/result?win=true`, 
-      {state:
-        {query}
+      return navigate(`/guessnumber/result?max=${query}&win=true`, 
+      {state:randomNr
       })
     }
 
@@ -45,7 +44,9 @@ const GuessNumber:FC = () => {
       setHintHistory([response, ...hintHistory])
     }
     if(query <= 1){
-      navigate(`/guessnumber/result?win=false`)
+      navigate(`/guessnumber/result?win=false`,
+      {state:randomNr
+      })
     }
   }, [inputHistory])
 
